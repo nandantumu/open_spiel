@@ -1,0 +1,475 @@
+game: python_f_one_strategy
+
+GameType.chance_mode = ChanceMode.SAMPLED_STOCHASTIC
+GameType.dynamics = Dynamics.SIMULTANEOUS
+GameType.information = Information.PERFECT_INFORMATION
+GameType.long_name = "Python F1 Strategy"
+GameType.max_num_players = 3
+GameType.min_num_players = 10
+GameType.parameter_specification = []
+GameType.provides_information_state_string = False
+GameType.provides_information_state_tensor = False
+GameType.provides_observation_string = True
+GameType.provides_observation_tensor = True
+GameType.provides_factored_observation_string = False
+GameType.reward_model = RewardModel.TERMINAL
+GameType.short_name = "python_f_one_strategy"
+GameType.utility = Utility.GENERAL_SUM
+
+NumDistinctActions() = 4
+PolicyTensorShape() = [4]
+MaxChanceOutcomes() = 6
+GetParameters() = {}
+NumPlayers() = 3
+MinUtility() = 0.0
+MaxUtility() = 3.0
+UtilitySum() = 1.0
+InformationStateTensorShape() = current_lap: [1], total_laps: [1], agent_id: [1], position: [3], progress: [3], tire_life: [3], tire_type: [3], last_action: [3]
+InformationStateTensorLayout() = TensorLayout.CHW
+InformationStateTensorSize() = 19
+ObservationTensorShape() = current_lap: [1], total_laps: [1], agent_id: [1], position: [3], progress: [3], tire_life: [3], tire_type: [3], last_action: [3]
+ObservationTensorLayout() = TensorLayout.CHW
+ObservationTensorSize() = 19
+MaxGameLength() = 20
+ToString() = "python_f_one_strategy()"
+
+# State 0
+# Lap: 1/20
+# Agent 0: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress
+# Agent 1: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress
+# Agent 2: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress
+IsTerminal() = False
+History() = []
+HistoryString() = ""
+IsChanceNode() = False
+IsSimultaneousNode() = True
+CurrentPlayer() = PlayerId.SIMULTANEOUS
+InformationStateString(0) = ""
+InformationStateString(1) = ""
+InformationStateString(2) = ""
+InformationStateTensor(0).current_lap: ◯
+InformationStateTensor(0).total_laps: ◯
+InformationStateTensor(0).agent_id: ◯
+InformationStateTensor(0).position: ◯◯◯
+InformationStateTensor(0).progress: ◯◯◯
+InformationStateTensor(0).tire_life: ◯◯◯
+InformationStateTensor(0).tire_type: ◯◯◯
+InformationStateTensor(0).last_action: ◯◯◯
+InformationStateTensor(1).current_lap: ◯
+InformationStateTensor(1).total_laps: ◯
+InformationStateTensor(1).agent_id: ◯
+InformationStateTensor(1).position: ◯◯◯
+InformationStateTensor(1).progress: ◯◯◯
+InformationStateTensor(1).tire_life: ◯◯◯
+InformationStateTensor(1).tire_type: ◯◯◯
+InformationStateTensor(1).last_action: ◯◯◯
+InformationStateTensor(2).current_lap: ◯
+InformationStateTensor(2).total_laps: ◯
+InformationStateTensor(2).agent_id: ◯
+InformationStateTensor(2).position: ◯◯◯
+InformationStateTensor(2).progress: ◯◯◯
+InformationStateTensor(2).tire_life: ◯◯◯
+InformationStateTensor(2).tire_type: ◯◯◯
+InformationStateTensor(2).last_action: ◯◯◯
+ObservationString(0) = ""
+ObservationString(1) = ""
+ObservationString(2) = ""
+ObservationTensor(0).current_lap: ◯
+ObservationTensor(0).total_laps: ◯
+ObservationTensor(0).agent_id: ◯
+ObservationTensor(0).position: ◯◯◯
+ObservationTensor(0).progress: ◯◯◯
+ObservationTensor(0).tire_life: ◯◯◯
+ObservationTensor(0).tire_type: ◯◯◯
+ObservationTensor(0).last_action: ◯◯◯
+ObservationTensor(1).current_lap: ◯
+ObservationTensor(1).total_laps: ◯
+ObservationTensor(1).agent_id: ◯
+ObservationTensor(1).position: ◯◯◯
+ObservationTensor(1).progress: ◯◯◯
+ObservationTensor(1).tire_life: ◯◯◯
+ObservationTensor(1).tire_type: ◯◯◯
+ObservationTensor(1).last_action: ◯◯◯
+ObservationTensor(2).current_lap: ◯
+ObservationTensor(2).total_laps: ◯
+ObservationTensor(2).agent_id: ◯
+ObservationTensor(2).position: ◯◯◯
+ObservationTensor(2).progress: ◯◯◯
+ObservationTensor(2).tire_life: ◯◯◯
+ObservationTensor(2).tire_type: ◯◯◯
+ObservationTensor(2).last_action: ◯◯◯
+SerializeState() = "Lap: 1/20\nAgent 0: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress\nAgent 1: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress\nAgent 2: MEDIUM tire @ 100.00 life, -1 position, 0.00 progress"
+Rewards() = [0, 0, 0]
+Returns() = [0, 0, 0]
+LegalActions(0) = [0, 1, 2, 3]
+LegalActions(1) = [0, 1, 2, 3]
+LegalActions(2) = [0, 1, 2, 3]
+StringLegalActions(0) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(1) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(2) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+
+# Apply joint action ["Agent PUSH", "Agent PUSH", "Agent PIT"]
+actions: [1, 1, 0]
+
+# State 1
+# Lap: 2/20
+# Agent 0: MEDIUM tire @ 85.00 life, 0 position, 101.05 progress
+# Agent 1: MEDIUM tire @ 85.00 life, 1 position, 101.05 progress
+# Agent 2: MEDIUM tire @ 100.00 life, 2 position, 100.75 progress
+IsTerminal() = False
+History() = []
+HistoryString() = ""
+IsChanceNode() = False
+IsSimultaneousNode() = True
+CurrentPlayer() = PlayerId.SIMULTANEOUS
+InformationStateString(0) = ""
+InformationStateString(1) = ""
+InformationStateString(2) = ""
+InformationStateTensor(0).current_lap: ◯
+InformationStateTensor(0).total_laps: ◯
+InformationStateTensor(0).agent_id: ◯
+InformationStateTensor(0).position: ◯◯◯
+InformationStateTensor(0).progress: ◯◯◯
+InformationStateTensor(0).tire_life: ◯◯◯
+InformationStateTensor(0).tire_type: ◯◯◯
+InformationStateTensor(0).last_action: ◯◯◯
+InformationStateTensor(1).current_lap: ◯
+InformationStateTensor(1).total_laps: ◯
+InformationStateTensor(1).agent_id: ◯
+InformationStateTensor(1).position: ◯◯◯
+InformationStateTensor(1).progress: ◯◯◯
+InformationStateTensor(1).tire_life: ◯◯◯
+InformationStateTensor(1).tire_type: ◯◯◯
+InformationStateTensor(1).last_action: ◯◯◯
+InformationStateTensor(2).current_lap: ◯
+InformationStateTensor(2).total_laps: ◯
+InformationStateTensor(2).agent_id: ◯
+InformationStateTensor(2).position: ◯◯◯
+InformationStateTensor(2).progress: ◯◯◯
+InformationStateTensor(2).tire_life: ◯◯◯
+InformationStateTensor(2).tire_type: ◯◯◯
+InformationStateTensor(2).last_action: ◯◯◯
+ObservationString(0) = ""
+ObservationString(1) = ""
+ObservationString(2) = ""
+ObservationTensor(0).current_lap: ◯
+ObservationTensor(0).total_laps: ◯
+ObservationTensor(0).agent_id: ◯
+ObservationTensor(0).position: ◯◯◯
+ObservationTensor(0).progress: ◯◯◯
+ObservationTensor(0).tire_life: ◯◯◯
+ObservationTensor(0).tire_type: ◯◯◯
+ObservationTensor(0).last_action: ◯◯◯
+ObservationTensor(1).current_lap: ◯
+ObservationTensor(1).total_laps: ◯
+ObservationTensor(1).agent_id: ◯
+ObservationTensor(1).position: ◯◯◯
+ObservationTensor(1).progress: ◯◯◯
+ObservationTensor(1).tire_life: ◯◯◯
+ObservationTensor(1).tire_type: ◯◯◯
+ObservationTensor(1).last_action: ◯◯◯
+ObservationTensor(2).current_lap: ◯
+ObservationTensor(2).total_laps: ◯
+ObservationTensor(2).agent_id: ◯
+ObservationTensor(2).position: ◯◯◯
+ObservationTensor(2).progress: ◯◯◯
+ObservationTensor(2).tire_life: ◯◯◯
+ObservationTensor(2).tire_type: ◯◯◯
+ObservationTensor(2).last_action: ◯◯◯
+SerializeState() = "Lap: 2/20\nAgent 0: MEDIUM tire @ 85.00 life, 0 position, 101.05 progress\nAgent 1: MEDIUM tire @ 85.00 life, 1 position, 101.05 progress\nAgent 2: MEDIUM tire @ 100.00 life, 2 position, 100.75 progress"
+Rewards() = [0, 0, 0]
+Returns() = [0, 0, 0]
+LegalActions(0) = [0, 1, 2, 3]
+LegalActions(1) = [0, 1, 2, 3]
+LegalActions(2) = [0, 1, 2, 3]
+StringLegalActions(0) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(1) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(2) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+
+# Apply joint action ["Agent BLOCK", "Agent PIT", "Agent BLOCK"]
+actions: [2, 0, 2]
+
+# State 2
+# Lap: 3/20
+# Agent 0: MEDIUM tire @ 75.00 life, 0 position, 202.00 progress
+# Agent 1: MEDIUM tire @ 100.00 life, 1 position, 201.80 progress
+# Agent 2: MEDIUM tire @ 90.00 life, 2 position, 201.70 progress
+IsTerminal() = False
+History() = []
+HistoryString() = ""
+IsChanceNode() = False
+IsSimultaneousNode() = True
+CurrentPlayer() = PlayerId.SIMULTANEOUS
+InformationStateString(0) = ""
+InformationStateString(1) = ""
+InformationStateString(2) = ""
+InformationStateTensor(0).current_lap: ◯
+InformationStateTensor(0).total_laps: ◯
+InformationStateTensor(0).agent_id: ◯
+InformationStateTensor(0).position: ◯◯◯
+InformationStateTensor(0).progress: ◯◯◯
+InformationStateTensor(0).tire_life: ◯◯◯
+InformationStateTensor(0).tire_type: ◯◯◯
+InformationStateTensor(0).last_action: ◯◯◯
+InformationStateTensor(1).current_lap: ◯
+InformationStateTensor(1).total_laps: ◯
+InformationStateTensor(1).agent_id: ◯
+InformationStateTensor(1).position: ◯◯◯
+InformationStateTensor(1).progress: ◯◯◯
+InformationStateTensor(1).tire_life: ◯◯◯
+InformationStateTensor(1).tire_type: ◯◯◯
+InformationStateTensor(1).last_action: ◯◯◯
+InformationStateTensor(2).current_lap: ◯
+InformationStateTensor(2).total_laps: ◯
+InformationStateTensor(2).agent_id: ◯
+InformationStateTensor(2).position: ◯◯◯
+InformationStateTensor(2).progress: ◯◯◯
+InformationStateTensor(2).tire_life: ◯◯◯
+InformationStateTensor(2).tire_type: ◯◯◯
+InformationStateTensor(2).last_action: ◯◯◯
+ObservationString(0) = ""
+ObservationString(1) = ""
+ObservationString(2) = ""
+ObservationTensor(0).current_lap: ◯
+ObservationTensor(0).total_laps: ◯
+ObservationTensor(0).agent_id: ◯
+ObservationTensor(0).position: ◯◯◯
+ObservationTensor(0).progress: ◯◯◯
+ObservationTensor(0).tire_life: ◯◯◯
+ObservationTensor(0).tire_type: ◯◯◯
+ObservationTensor(0).last_action: ◯◯◯
+ObservationTensor(1).current_lap: ◯
+ObservationTensor(1).total_laps: ◯
+ObservationTensor(1).agent_id: ◯
+ObservationTensor(1).position: ◯◯◯
+ObservationTensor(1).progress: ◯◯◯
+ObservationTensor(1).tire_life: ◯◯◯
+ObservationTensor(1).tire_type: ◯◯◯
+ObservationTensor(1).last_action: ◯◯◯
+ObservationTensor(2).current_lap: ◯
+ObservationTensor(2).total_laps: ◯
+ObservationTensor(2).agent_id: ◯
+ObservationTensor(2).position: ◯◯◯
+ObservationTensor(2).progress: ◯◯◯
+ObservationTensor(2).tire_life: ◯◯◯
+ObservationTensor(2).tire_type: ◯◯◯
+ObservationTensor(2).last_action: ◯◯◯
+SerializeState() = "Lap: 3/20\nAgent 0: MEDIUM tire @ 75.00 life, 0 position, 202.00 progress\nAgent 1: MEDIUM tire @ 100.00 life, 1 position, 201.80 progress\nAgent 2: MEDIUM tire @ 90.00 life, 2 position, 201.70 progress"
+Rewards() = [0, 0, 0]
+Returns() = [0, 0, 0]
+LegalActions(0) = [0, 1, 2, 3]
+LegalActions(1) = [0, 1, 2, 3]
+LegalActions(2) = [0, 1, 2, 3]
+StringLegalActions(0) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(1) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(2) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+
+# Apply joint action ["Agent PIT", "Agent BLOCK", "Agent BLOCK"]
+actions: [0, 2, 2]
+
+# State 3
+# Apply joint action ["Agent CONSERVE", "Agent PIT", "Agent CONSERVE"]
+actions: [3, 0, 3]
+
+# State 4
+# Apply joint action ["Agent CONSERVE", "Agent PIT", "Agent PIT"]
+actions: [3, 0, 0]
+
+# State 5
+# Apply joint action ["Agent BLOCK", "Agent BLOCK", "Agent PIT"]
+actions: [2, 2, 0]
+
+# State 6
+# Apply joint action ["Agent PIT", "Agent CONSERVE", "Agent CONSERVE"]
+actions: [0, 3, 3]
+
+# State 7
+# Apply joint action ["Agent CONSERVE", "Agent PUSH", "Agent BLOCK"]
+actions: [3, 1, 2]
+
+# State 8
+# Apply joint action ["Agent PUSH", "Agent PIT", "Agent PIT"]
+actions: [1, 0, 0]
+
+# State 9
+# Apply joint action ["Agent BLOCK", "Agent BLOCK", "Agent BLOCK"]
+actions: [2, 2, 2]
+
+# State 10
+# Lap: 11/20
+# Agent 0: MEDIUM tire @ 70.00 life, 0 position, 1009.15 progress
+# Agent 1: MEDIUM tire @ 90.00 life, 1 position, 1008.85 progress
+# Agent 2: MEDIUM tire @ 90.00 life, 2 position, 1008.60 progress
+IsTerminal() = False
+History() = []
+HistoryString() = ""
+IsChanceNode() = False
+IsSimultaneousNode() = True
+CurrentPlayer() = PlayerId.SIMULTANEOUS
+InformationStateString(0) = ""
+InformationStateString(1) = ""
+InformationStateString(2) = ""
+InformationStateTensor(0).current_lap: ◯
+InformationStateTensor(0).total_laps: ◯
+InformationStateTensor(0).agent_id: ◯
+InformationStateTensor(0).position: ◯◯◯
+InformationStateTensor(0).progress: ◯◯◯
+InformationStateTensor(0).tire_life: ◯◯◯
+InformationStateTensor(0).tire_type: ◯◯◯
+InformationStateTensor(0).last_action: ◯◯◯
+InformationStateTensor(1).current_lap: ◯
+InformationStateTensor(1).total_laps: ◯
+InformationStateTensor(1).agent_id: ◯
+InformationStateTensor(1).position: ◯◯◯
+InformationStateTensor(1).progress: ◯◯◯
+InformationStateTensor(1).tire_life: ◯◯◯
+InformationStateTensor(1).tire_type: ◯◯◯
+InformationStateTensor(1).last_action: ◯◯◯
+InformationStateTensor(2).current_lap: ◯
+InformationStateTensor(2).total_laps: ◯
+InformationStateTensor(2).agent_id: ◯
+InformationStateTensor(2).position: ◯◯◯
+InformationStateTensor(2).progress: ◯◯◯
+InformationStateTensor(2).tire_life: ◯◯◯
+InformationStateTensor(2).tire_type: ◯◯◯
+InformationStateTensor(2).last_action: ◯◯◯
+ObservationString(0) = ""
+ObservationString(1) = ""
+ObservationString(2) = ""
+ObservationTensor(0).current_lap: ◯
+ObservationTensor(0).total_laps: ◯
+ObservationTensor(0).agent_id: ◯
+ObservationTensor(0).position: ◯◯◯
+ObservationTensor(0).progress: ◯◯◯
+ObservationTensor(0).tire_life: ◯◯◯
+ObservationTensor(0).tire_type: ◯◯◯
+ObservationTensor(0).last_action: ◯◯◯
+ObservationTensor(1).current_lap: ◯
+ObservationTensor(1).total_laps: ◯
+ObservationTensor(1).agent_id: ◯
+ObservationTensor(1).position: ◯◯◯
+ObservationTensor(1).progress: ◯◯◯
+ObservationTensor(1).tire_life: ◯◯◯
+ObservationTensor(1).tire_type: ◯◯◯
+ObservationTensor(1).last_action: ◯◯◯
+ObservationTensor(2).current_lap: ◯
+ObservationTensor(2).total_laps: ◯
+ObservationTensor(2).agent_id: ◯
+ObservationTensor(2).position: ◯◯◯
+ObservationTensor(2).progress: ◯◯◯
+ObservationTensor(2).tire_life: ◯◯◯
+ObservationTensor(2).tire_type: ◯◯◯
+ObservationTensor(2).last_action: ◯◯◯
+SerializeState() = "Lap: 11/20\nAgent 0: MEDIUM tire @ 70.00 life, 0 position, 1009.15 progress\nAgent 1: MEDIUM tire @ 90.00 life, 1 position, 1008.85 progress\nAgent 2: MEDIUM tire @ 90.00 life, 2 position, 1008.60 progress"
+Rewards() = [0, 0, 0]
+Returns() = [0, 0, 0]
+LegalActions(0) = [0, 1, 2, 3]
+LegalActions(1) = [0, 1, 2, 3]
+LegalActions(2) = [0, 1, 2, 3]
+StringLegalActions(0) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(1) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+StringLegalActions(2) = ["Agent PIT", "Agent PUSH", "Agent BLOCK", "Agent CONSERVE"]
+
+# Apply joint action ["Agent BLOCK", "Agent CONSERVE", "Agent PIT"]
+actions: [2, 3, 0]
+
+# State 11
+# Apply joint action ["Agent PUSH", "Agent PUSH", "Agent CONSERVE"]
+actions: [1, 1, 3]
+
+# State 12
+# Apply joint action ["Agent PIT", "Agent PIT", "Agent CONSERVE"]
+actions: [0, 0, 3]
+
+# State 13
+# Apply joint action ["Agent PIT", "Agent PIT", "Agent PUSH"]
+actions: [0, 0, 1]
+
+# State 14
+# Apply joint action ["Agent BLOCK", "Agent PIT", "Agent BLOCK"]
+actions: [2, 0, 2]
+
+# State 15
+# Apply joint action ["Agent CONSERVE", "Agent BLOCK", "Agent BLOCK"]
+actions: [3, 2, 2]
+
+# State 16
+# Apply joint action ["Agent CONSERVE", "Agent PUSH", "Agent BLOCK"]
+actions: [3, 1, 2]
+
+# State 17
+# Apply joint action ["Agent PIT", "Agent PUSH", "Agent CONSERVE"]
+actions: [0, 1, 3]
+
+# State 18
+# Apply joint action ["Agent PIT", "Agent PIT", "Agent PUSH"]
+actions: [0, 0, 1]
+
+# State 19
+# Lap: 20/20
+# Agent 0: MEDIUM tire @ 100.00 life, 1 position, 1916.90 progress
+# Agent 1: MEDIUM tire @ 100.00 life, 2 position, 1916.85 progress
+# Agent 2: MEDIUM tire @ 25.00 life, 0 position, 1916.90 progress
+IsTerminal() = True
+History() = []
+HistoryString() = ""
+IsChanceNode() = False
+IsSimultaneousNode() = False
+CurrentPlayer() = PlayerId.TERMINAL
+InformationStateString(0) = ""
+InformationStateString(1) = ""
+InformationStateString(2) = ""
+InformationStateTensor(0).current_lap: ◯
+InformationStateTensor(0).total_laps: ◯
+InformationStateTensor(0).agent_id: ◯
+InformationStateTensor(0).position: ◯◯◯
+InformationStateTensor(0).progress: ◯◯◯
+InformationStateTensor(0).tire_life: ◯◯◯
+InformationStateTensor(0).tire_type: ◯◯◯
+InformationStateTensor(0).last_action: ◯◯◯
+InformationStateTensor(1).current_lap: ◯
+InformationStateTensor(1).total_laps: ◯
+InformationStateTensor(1).agent_id: ◯
+InformationStateTensor(1).position: ◯◯◯
+InformationStateTensor(1).progress: ◯◯◯
+InformationStateTensor(1).tire_life: ◯◯◯
+InformationStateTensor(1).tire_type: ◯◯◯
+InformationStateTensor(1).last_action: ◯◯◯
+InformationStateTensor(2).current_lap: ◯
+InformationStateTensor(2).total_laps: ◯
+InformationStateTensor(2).agent_id: ◯
+InformationStateTensor(2).position: ◯◯◯
+InformationStateTensor(2).progress: ◯◯◯
+InformationStateTensor(2).tire_life: ◯◯◯
+InformationStateTensor(2).tire_type: ◯◯◯
+InformationStateTensor(2).last_action: ◯◯◯
+ObservationString(0) = ""
+ObservationString(1) = ""
+ObservationString(2) = ""
+ObservationTensor(0).current_lap: ◯
+ObservationTensor(0).total_laps: ◯
+ObservationTensor(0).agent_id: ◯
+ObservationTensor(0).position: ◯◯◯
+ObservationTensor(0).progress: ◯◯◯
+ObservationTensor(0).tire_life: ◯◯◯
+ObservationTensor(0).tire_type: ◯◯◯
+ObservationTensor(0).last_action: ◯◯◯
+ObservationTensor(1).current_lap: ◯
+ObservationTensor(1).total_laps: ◯
+ObservationTensor(1).agent_id: ◯
+ObservationTensor(1).position: ◯◯◯
+ObservationTensor(1).progress: ◯◯◯
+ObservationTensor(1).tire_life: ◯◯◯
+ObservationTensor(1).tire_type: ◯◯◯
+ObservationTensor(1).last_action: ◯◯◯
+ObservationTensor(2).current_lap: ◯
+ObservationTensor(2).total_laps: ◯
+ObservationTensor(2).agent_id: ◯
+ObservationTensor(2).position: ◯◯◯
+ObservationTensor(2).progress: ◯◯◯
+ObservationTensor(2).tire_life: ◯◯◯
+ObservationTensor(2).tire_type: ◯◯◯
+ObservationTensor(2).last_action: ◯◯◯
+SerializeState() = "Lap: 20/20\nAgent 0: MEDIUM tire @ 100.00 life, 1 position, 1916.90 progress\nAgent 1: MEDIUM tire @ 100.00 life, 2 position, 1916.85 progress\nAgent 2: MEDIUM tire @ 25.00 life, 0 position, 1916.90 progress"
+Rewards() = [2, 1, 3]
+Returns() = [2, 1, 3]
